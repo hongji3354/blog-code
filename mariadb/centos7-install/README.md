@@ -1,6 +1,6 @@
 # CentOS7에 MariaDB 10.4 설치하기
 
-![0](./images/0.PNG)
+![0](./images/0.png)
 
 
 
