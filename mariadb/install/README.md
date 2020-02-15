@@ -1,8 +1,5 @@
 # CentOS7에 MariaDB 10.4 설치하기
 
-![0](./images/0.png)
-
-
 
 ## 1. yum Repository 추가
 
@@ -13,8 +10,6 @@
 저는 CentOS7과 MariaDB 10.4 버전이 필요하므로 아래와 같이 선택하였습니다.
 
 ![1](./images/1.PNG)
-
-
 
 ``/etc/yum.repos.d/MriaDB.repo``에 MariaDB 설치를 위한 Repository 정보를 추가해 줍니다.
 
