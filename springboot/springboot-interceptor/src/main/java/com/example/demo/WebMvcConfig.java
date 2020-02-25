@@ -13,14 +13,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Resource(name = "userInterceptor")
     private HandlerInterceptor userInterceptor;
 
-    @Resource(name = "adminInterceptor")
-    private HandlerInterceptor adminInterceptor;
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(userInterceptor)
-                .addPathPatterns("/user");
-        registry.addInterceptor(adminInterceptor)
-                .addPathPatterns("/admin");
+                .addPathPatterns("/user/*");
     }
 }

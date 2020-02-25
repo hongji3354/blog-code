@@ -14,17 +14,17 @@ public class UserInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.info("user interceptor preHanle");
-        return true;
+        log.error("user interceptor preHanle");
+        return false;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        log.info("user interceptor postHandle");
+        log.error("user interceptor postHandle");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        log.info("user interceptor afterCompletion");
+        log.error("user interceptor afterCompletion");
     }
 }
