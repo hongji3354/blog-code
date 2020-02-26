@@ -1,8 +1,10 @@
 # Interceptor에서 preHandle 메소드 return 값의 의미는 무엇일까?
 
-## 환경
+## 개발환경
  - JDK 1.8
  - SpringBoot 2.2.4.RELEASE
+
+예제코드는 [github](https://github.com/hongji3354/blog-code/tree/master/springboot/springboot-interceptor) 에  있습니다.
 
 ## preHandle의 return값이 true 일때
 **Controller로 요청이 넘어가며**, Controller에서 요청을 처리하기 때문에 postHandle 메서드와 afterCompletion 메서드가 실행된다. 
