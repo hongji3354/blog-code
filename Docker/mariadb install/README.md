@@ -1,4 +1,4 @@
-# Docker를 사용해서 MariaDB 설치 하기
+# Docker를 사용해서 MariaDB 설치하기
 
 ## 환경정보
 
@@ -17,13 +17,21 @@
 
 ## 2. Container 시작
 
+````
+docker run --name mariadb -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mariadb mariadb
+````
+
 - --name은 `Container의 이름` 으로 mariadb로 설정하였습니다.
+
 - -d 는 detached mode로 `Container가 백그라운드로` 실행됩니다.
+
 - -p는 Host와 Container의 `포트를 연결`하는 것으로 Host에서  3306 포트로 접속시 Container 3306으로 포워딩 되도록 한 설정 입니다.
+
 - -e는 `Container 내에서 사용할 환경변수로` MYSQL_ROOT_PASSWORD는 root 계정의 password 를 설정하기 위한 환경변수 입니다.
+
 - 마지막으로 mariadb는 위에서 pull한 image 이름 입니다.
 
-    docker run --name mariadb -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mariadb mariadb
+    
 
 Container가 정상적으로 실행되었다면 아래 처럼 나타납니다.
 
@@ -31,14 +39,21 @@ Container가 정상적으로 실행되었다면 아래 처럼 나타납니다.
 
 ## 3. Container bash에 접속
 
+```
+docker exec -it mariadb /bin/bash
+```
+
 - exec를 통해 `Container에 특정 명령을 실행할` 수 있습니다.
+
 - -it는 -i와 -t의 옵션을 합친 것으로 `Container에서 Bash를 사용할 수 있습니다.`
+
 - mariadb는 run시 지정한 Container의 이름입니다.
+
 - /bin/bash는 bash Shell에 연결하겠다는 의미입니다.
 
-    docker exec -it mariadb /bin/bash
-
-해당 명령을 실행 후 root 계정으로 Container에 Bash에 접속한 것을 알 수 있습ㄴ디ㅏ.
+    
+    
+     명령을 실행 후 터미널을 보면 root 계정으로 Container에 Bash에 접속한 것을 알 수 있습니다.
 
 ![3.png](./image/3.png)
 
