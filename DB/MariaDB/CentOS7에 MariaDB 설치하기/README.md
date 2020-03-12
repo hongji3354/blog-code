@@ -9,11 +9,7 @@
 
 ## 1. yum Repository 추가
 
-아래 홈페이지에 접속하시면 OS와 MairaDB Version에 따라 Repository 추가 방법과 설치방법을 제공해 줍니다.
-
-[Setting up MariaDB Repositories](https://downloads.mariadb.org/mariadb/repositories/#mirror=hosting90)
-
-
+[Setting up MariaDB Repositories](https://downloads.mariadb.org/mariadb/repositories/#mirror=hosting90)에 접속하시면 OS와 MairaDB Version에 따라 Repository 추가 방법과 설치방법을 제공해 줍니다.
 
 저는 CentOS7에 MariaDB 10.4 를 설치할 예정이므로 아래와 같이 선택하였습니다.
 
