@@ -96,10 +96,10 @@ sudo mysql_secure_installation
 
 ```
 [mysql]
-default-character-set=utf8
+default-character-set=utf8mb4
 
 [mysqldump]
-default-character-set=utf8
+default-character-set=utf8mb4
 ```
 
 ##### 2. /etc/my.cnf.d/server.cnf
@@ -107,8 +107,8 @@ default-character-set=utf8
 ```
 [mysqld]
 collation-server = utf8_unicode_ci
-init-connect='SET NAMES utf8'
-character-set-server = utf8
+init-connect='SET NAMES utf8mb4'
+character-set-server = utf8mb4
 ```
 
 변경 사항을 적용하기 위해 mariaDB를 재시작 합니다.
