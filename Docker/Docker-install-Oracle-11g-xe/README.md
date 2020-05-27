@@ -44,7 +44,7 @@ DB Tool을 사용해서 접속이 되는지 확인해 보겠습니다.
 
 정상적으로 Connection이 되는 것을 확인했기 때문에 추가 설정을 진행하겠습니다.
 
-![10](images/10.png)
+![10](images/10.PNG)
 
 ## 4. DB Timezone 확인
 
