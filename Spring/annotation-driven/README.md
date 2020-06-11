@@ -1,6 +1,6 @@
 # annotation-driven이 하는 일
 
-annotation-driven을 Spring의 많은 설정들이 자동으로 진행됩니다.
+annotation-driven을 사용하면 Spring의 많은 설정들이 자동으로 진행됩니다.
 
 프로젝트 초기에 해당 설정을 사용한다면 문제가 없겠지만, 기존 프로젝트에 annotation-driven 사용시 기존 설정이 덮여 쓰기 되는 경우가 발생할 수 있기 때문에 사용시 유의해야 합니다.
 
