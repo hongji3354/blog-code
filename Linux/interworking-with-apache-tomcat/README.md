@@ -420,7 +420,6 @@ vi /home/dummy/tomcat/conf/server.xml
   * port는 AJP port를 설정하는 부분으로 `/etc/httpd/conf/workers.properties`에 `worker.dummy.port`에 **18009**으로 정의 하였기 때문에 **18009**로 지정하였습니다.
   * secret는 Apache와 Tomcat이 통신할 때 **해당 Key가 일치해야 통신**하며, 해당 key는 `/etc/httpd/conf/workers.properties`에  `worker.dummy.secret`에 정의되어 있습니다. 만약 secret을 사용하지 않는다면 `secretRequired` 속성의 값을 **false**로 주시면 됩니다.
   * URIEncoding="UTF-8"은 URI의 파라미터로 한글이 들어올 때 깨지는 것을 막기위해 설정 하였습니다.
-* Context를 사용해서 pro
 
 ```bash
 <Connector protocol="AJP/1.3"
