@@ -26,7 +26,7 @@ ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 ## 2. Setting up MariaDB Repositories
 
-MariaDB를 yum을 사용해서 원하는 Version을 설치ㅎ기위해 [Setting up MariaDB Repositories](https://downloads.mariadb.org/mariadb/repositories/#mirror=harukasan)에 접속해서 OS 및 MariaDB Version을 선택 후 **Repository를 추가**해 줍니다.
+MariaDB를 yum을 사용해서 원하는 Version을 설치하기위해 [Setting up MariaDB Repositories](https://downloads.mariadb.org/mariadb/repositories/#mirror=harukasan)에 접속해서 OS 및 MariaDB Version을 선택 후 **Repository를 추가**해 줍니다.
 
 ![1](./images/1.png)
 
