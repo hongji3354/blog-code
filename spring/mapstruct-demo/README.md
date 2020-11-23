@@ -3,8 +3,7 @@
 MapStruct는 **Object Mapping시 사용되는 라이브러리** 입니다.
 MapStruct를 알기 전에는 modelmapper 라이브러리를 사용하였지만 MapStruct가 ModelMapper에 비해 아래와 같은 장점을 가지고 있어서 MapStruct를 사용하게 되었습니다.
 
-1. Google Trands 검색시 **MapStruct의 검색비중이 높습니다.** 
-    > [MapStruct와 ModelMapper - Google Trand](https://trends.google.co.kr/trends/explore?q=mapstruct,modelmapper)
+1. Google Trands 검색시 **MapStruct의 검색비중이 높습니다.** - [MapStruct와 ModelMapper - Google Trand](https://trends.google.co.kr/trends/explore?q=mapstruct,modelmapper)
 2. ModelMapper는 reflection을 사용하기 때문에 성능상 문제가 발생할 수 있으나, **MapStruct는 Compile시 mapping 정보를 가진 클래스를 생성하기 때문에 성능관련 이슈가 발생하지 않습니다.**
 3. ModelMapper는 reflection을 사용하기 때문에 Runtime시 오류를 확인할 수 있으나 **MapStruct는 Compile시 오류를 확인**할 수 있습니다.
 
