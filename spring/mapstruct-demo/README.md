@@ -15,7 +15,7 @@ MapStruct를 알기 전에는 modelmapper 라이브러리를 사용하였지만 
  - lombok 1.18.12
 
 
-## 1. 의존성 추가
+## 2. 의존성 추가
 
 만약 lombok과 MapStruct를 함께 사용시에는 의존성을 아래과 같이 설정해 주셔야 합니다. 만약 lombok을 1.8.16 이상을 사용하신다면 `lombok-mapstruct-binding` 라이브러리를 추가해 주셔야 합니다.
 
@@ -35,11 +35,11 @@ dependencies {
 }
 ```
 
-## 2. 구현 코드
+## 3. 구현 코드
 
 주로 Entity와 DTO를 매핑하므로 해당 코드를 예제로 작성하겠습니다.
 
-### 2-1. Entity
+### 3-1. Entity
 
 ```java
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -69,7 +69,7 @@ public class Member {
 }
 ```
 
-### 2-2. DTO
+### 3-2. DTO
 
 위의 Entity의 field중 userName, name, address를 저장하기 위한 DTO 입니다.
 
@@ -87,7 +87,7 @@ public class MemberDto {
 }
 ```
 
-### 2-3. Mapper Interface 
+### 3-3. Mapper Interface 
 
 Mapping 정보를 정의하기 위한 Interface 입니다.
 
@@ -139,7 +139,7 @@ public class MemberMapperImpl implements MemberMapper {
 
 ![](image\1.PNG)
 
-### 2-4. 테스트 코드
+### 3-4. 테스트 코드
 
 Mapper Interface에서 componentModel = "spring" 을 사용하였기 때문에 memberMapper의 구현체를 의존주입을 받을 수 있습니다.
 
@@ -173,7 +173,7 @@ public class MemberTest {
 }
 ```
 
-## 3. 필드명이 다를시
+## 4. 필드명이 다를시
 
 필드명시 다를시에는 `@Mapping` 어노테이션을 사용하여 일치시킬 필드명을 지정할 수 있습니다.
 
@@ -218,7 +218,7 @@ public class MemberMapperImpl implements MemberMapper {
 }
 ```
 
-## 4. componentModel = "spring" 생략하기
+## 5. componentModel = "spring" 생략하기
 
 build.gradle에 추가설정을 해주면 `@Mapper`에 componentModel = "spring"을 생략할 수 있습니다.
 > 다양한 Configuration options이 있으니 [Configuration options](https://mapstruct.org/documentation/stable/reference/html/#configuration-options)에서 필요한 options을 사용하시면 됩니다.
@@ -231,7 +231,7 @@ compileJava {
 }
 ```
 
-## 5. setter 대신 builder 사용하기
+## 6. setter 대신 builder 사용하기
 
 위에서 생성된 매핑을 보면 전부 setter를 사용해서 값을 넣어주고 있습니다. 하지만 setter를 사용하지 않고 빌더패턴을 사용해서 값을 세팅하는 객체도 있기 때문에 builder 사용해 보겠습니다.
 
@@ -308,7 +308,7 @@ public class MemberMapperImpl implements MemberMapper {
 }
 ```
 
-## 6. return type이 collection 일 시
+## 7. return type이 collection 일 시
 
 MapStruct는 return type이 collection일시에도 자동으로 매핑을 해줍니다.
 
@@ -348,7 +348,7 @@ public class CollectionMappingImpl implements CollectionMapping {
 }
 ```
 
-## 6. 매핑 메서드의 첫 번째 파라미터가 collection 일시 발생할 수 있는 문제
+## 8. 매핑 메서드의 첫 번째 파라미터가 collection 일시 발생할 수 있는 문제
 
 MapStruct 1.4.1.Final 까지는 매핑 메서드의 첫 번째 파라미터가 collection일 시 **return type은 무조건 iterable를 구현한 Collection이 되어야 합니다.** 
 
