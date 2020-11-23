@@ -24,7 +24,7 @@ MapStruct를 알기 전에는 modelmapper 라이브러리를 사용하였지만 
 
 일단 해당 포스팅 에서는 MapStruct는 1.4.1.Final을 사용하며, lombok에서는 1.18.12를 사용하겠습니다.
 
-```groovy
+```java
 ext {
 	mapstructVersion = "1.4.1.Final"
 	lombokVersion = "1.18.12"
@@ -349,9 +349,9 @@ public class CollectionMappingImpl implements CollectionMapping {
 }
 ```
 
-## 6. 매핑 메서드 파라미터의 첫 번쨰로 collection일시 발생할 수 있는 문제
+## 6. 매핑 메서드의 첫 번째 파라미터가 collection 일시 발생할 수 있는 문제
 
-MapStruct 1.4.1.Final 까지는 매핑 메서드 파라미터의 첫 번쨰로 collection이 올 경우 **return type은 무조건 iterable를 구현한 Collection이 되어야 합니다.** 
+MapStruct 1.4.1.Final 까지는 매핑 메서드의 첫 번째 파라미터가 collection일 시 **return type은 무조건 iterable를 구현한 Collection이 되어야 합니다.** 
 
 ```java
 @Mapper
