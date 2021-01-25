@@ -13,4 +13,5 @@ public class CarDto {
     private String manufacturer;
     private String color;
     private int numberOfSeat;
+    private String identificationNumber;
 }

@@ -9,7 +9,11 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface CarMapper {
+
     CarDto carToCarDto(Car car);
 
+    @Mappings(
+            @Mapping(source = "identificationNumber", target = "vehicleIdentificationNumber")
+    )
     Car carDtoToCar(CarDto carDto);
 }
