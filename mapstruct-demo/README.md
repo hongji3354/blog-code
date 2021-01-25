@@ -39,7 +39,7 @@ dependencies {
 
 매핑 정보를 정의하는 인터페이스에 componentModel = "spring" 옵션을 사용하면 **생성된 매핑코드에 @Compoent가 붙어서 Spring Bean으로 사용**할 수 있습니다.
 
-매핑 정보를 정의하는 모든 인터페이스에 componentModel = "spring"을 붙이는 것은 귀찮은 일이므로 아래처럼 컴파일 옵션을 추가하면 해당 옵션이 자동으로 적용 됩니다. 
+매핑 정보를 정의하는 모든 인터페이스에 componentModel = "spring"을 붙이는 것은 귀찮은 일이므로 아래처럼 컴파일 옵션을 추가하면 해당 옵션이 자동으로 적용 됩니다.
 
 ```groovy
 compileJava {
@@ -102,9 +102,10 @@ public interface CarMapper {
 }
 ```
 
-### 3-3. 매핑 코드 확인
+### 4-3. 매핑 코드 확인
 
 Compile을 하면 매핑 코드가 생성되며, carToCarDto 메소드의 파라미터인 Car를 CarDto로 매핑하는 매핑코드가 생성된 것을 알 수 있습니다.
+
 또한 @Component 어노테이션이 붙여져 있기 때문에 의존주입을 받을 수 있습니다.
 
 ```java
@@ -133,7 +134,7 @@ public class CarMapperImpl implements CarMapper {
 }
 ```
 
-## 3-4. 테스트
+### 4-4. 테스트
 
 매핑 코드가 정상적으로 작동하는지 테스트 해보겠습니다.
 
@@ -165,12 +166,13 @@ class CarDtoTest {
 
 ![1](./images/1.png)
 
-## 4. Field 명이 다를시
+## 5. Field 명이 다를시
 
 MapStruct는 Field 명이 일치하는 것에서만 매핑 코드를 생성합니다.
 만약 Field 명이 다를 경우 @Mapping 어노테이션을 사용해서 명시적으로 지정할 수 있습니다.
 
 @Mapping 어노테이션을 사용해서 CarDto에 있는 identificationNumber을 vehicleIdentificationNumber에 매핑 되도록 설정하였습니다.
+
 ```java
 @Mapper
 public interface CarMapper {
@@ -189,7 +191,7 @@ public interface CarMapper {
 ```java
 @Component
 public class CarMapperImpl implements CarMapper {
-    
+
     public Car carDtoToCar(CarDto carDto) {
         if (carDto == null) {
             return null;
