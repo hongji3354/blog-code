@@ -1,5 +1,7 @@
 # MapStruct 정리
 
+> 코드는 [Github](https://github.com/hongji3354/blog-code/tree/master/mapstruct-demo) 에 있습니다.
+
 MapStruct란 **매핑정보를 기반으로 매핑코드를 생성**해서 Java Bean간의 매핑을 자동으로 해주는 라이브러리 입니다.
 
 ## 1. 환경
