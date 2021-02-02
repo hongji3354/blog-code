@@ -1,6 +1,6 @@
 # @Transactional propagation이란?
 
-> 코드는 [Github]() 에 있습니다.
+> 코드는 [Github](https://github.com/hongji3354/blog-code/tree/master/transactional-propagation) 에 있습니다.
 
 @Transactional propagation이란 **트랜잭션을 시작하거나 기존 트랜잭션에 참여하는 방법을 결정하는 속성** 입니다.
 
@@ -394,7 +394,7 @@ public class FooChildService {
 
 이미 진행 중인 트랜잭션이 있으면 해당 트랜잭션 안에 트랜잭션을 생성 합니다.
 
-이렇게 중첩된 트랜잭션은 부모 트랜잭션의 커밋과 롤백에는 영향을 받지만 자신의 커밋과 롤백은 부모 트랜잭션에게 영향을 주지 않습니다.w
+이렇게 중첩된 트랜잭션은 부모 트랜잭션의 커밋과 롤백에는 영향을 받지만 자신의 커밋과 롤백은 부모 트랜잭션에게 영향을 주지 않습니다.
 
 중첩 트랜잭션은 JDBC 3.0 스펙의 저장포인트(savepoint)를 지원하는 드라이버와 DataSourceTransactionManager를 이용할 경우에 적용 가능 합니다.
 
