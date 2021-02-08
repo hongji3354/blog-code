@@ -1,0 +1,36 @@
+version: '3.1'
+services:
+  oracle_xe_11:
+    image: jaspeen/oracle-xe-11g
+    restart: always
+    ports:
+      - 1521:1521
+  mysql_8.0.23:
+    image: mysql:8.0.23
+    restart: always
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: foo
+    ports:
+      - 3306:3306
+  mariadb_10.5.8:
+    image: mariadb:10.5.8
+    restart: always
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: foo
+    ports:
+      - 3306:3306
+  postgres_13.1:
+    image: postgres:13.1
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: foo
+    ports:
+      - 5432:5432
