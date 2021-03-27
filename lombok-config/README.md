@@ -1,5 +1,7 @@
 # lombok.config를 사용해서 특정 어노테이션 제한하기
 
+> 코드는 [Github](https://github.com/hongji3354/blog-code/tree/master/lombok-config) 에 있습니다.
+
 만약 Code Convention으로 lombok의 특정 어노테이션을 사용하지 않는다고 할 때 **lombok.config를 활용하면 매우 편하게 적용**할 수 있습니다.
 
 > lombok.config는 lombok 1.14에 추가되었으며 상세내용은 [Configuration system](https://projectlombok.org/features/configuration)을 확인해주세요.
