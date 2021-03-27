@@ -6,7 +6,7 @@
 
 ## 1. 설정 파일 생성
 
-프로젝트 최상단에 lombom 설정파일인 **lombok.config**를 생성합니다.
+프로젝트 최상단에 lombok 설정파일인 **lombok.config**를 생성합니다.
 
 ![1](./images/1.png)
 
