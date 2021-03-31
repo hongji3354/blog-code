@@ -2,7 +2,7 @@
 
 > 코드는 [Github]()에 있습니다.
 
-# 1. 환경
+## 1. 환경
 
 - JDk 11
 - Spring Boot 2.4.2
@@ -11,7 +11,7 @@
 - MariaDB 10.5.8
 - PostgreSQL 13.1
 
-# 2. @Lob
+## 2. @Lob
 
 일반적으로 VARCHAR보다 큰 데이터를 저장하고자 할 시 @Lob를 사용하는데, @Lob사용시 DB별 Data Type은 아래와 같습니다.
 
