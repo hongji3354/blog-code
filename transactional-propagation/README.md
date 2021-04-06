@@ -4,7 +4,7 @@
 
 @Transactional propagation이란 **트랜잭션을 시작하거나 기존 트랜잭션에 참여하는 방법을 결정하는 속성** 입니다.
 
-propagation에 올 수 있는 값으로는 `REQUIRED, SUPPORTS, MANDATORY, REQUIRES_NEW, NOT_SUPPORTED, NEVER, NESTED` 가 있습니다.
+propagation에 올 수 있는 값으로는 `REQUIRED`, `SUPPORTS`, `MANDATORY`, `REQUIRES_NEW`, `NOT_SUPPORTED`, `NEVER`, `NESTED` 가 있습니다.
 
 ## 1. 환경
 
