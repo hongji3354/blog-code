@@ -2,10 +2,12 @@ package dev.jihun.domain.car.domain;
 
 import lombok.*;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@Entity
 public class Car {
 
     @Id

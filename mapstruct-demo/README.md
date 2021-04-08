@@ -22,6 +22,8 @@ MapStruct란 **매핑정보를 기반으로 매핑코드를 생성**해서 Java 
 또한 lombok 1.18.16 버전 부터는 `lombok-mapstruct-binding`를 추가해주셔야 합니다. 자세한 내용은 [Lombok Changelog](https://projectlombok.org/changelog) 를 참고해 주세요.
 > 의존성 순서를 안지켰을시 lombok의 @Builder를 사용했음에도 불구하고 MapStruct의 매핑 코드에서는 Builder 패턴이 아닌 생성자를 사용했습니다.
 
+### Gradle
+
 ```groovy
 ext {
     mapstructVersion = "1.4.1.Final"
@@ -49,6 +51,8 @@ compileJava {
 }
 ```
 
+
+
 > 자세한 설정 옵션은 [MapStruct 1.4.1.Final Reference Guide](https://mapstruct.org/documentation/stable/reference/html/#configuration-options) 참고해주세요.
 
 ## 4. 매핑 예제
@@ -62,6 +66,7 @@ Entity와 DTO 사이의 매핑코드를 자주 사용하기 때문에 Entity와 
 ```java
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@Entity
 public class Car {
     @Id
     private String vehicleIdentificationNumber;
@@ -168,6 +173,8 @@ class CarDtoTest {
 
 ## 5. Field 명이 다를시
 
+### 5-1. 컬렉션이 아닐 시
+
 MapStruct는 Field 명이 일치하는 것에서만 매핑 코드를 생성합니다.
 만약 Field 명이 다를 경우 @Mapping 어노테이션을 사용해서 명시적으로 지정할 수 있습니다.
 
@@ -207,6 +214,48 @@ public class CarMapperImpl implements CarMapper {
 }
 ```
 > 위의 코드에서 Car Entity는 빌더 패턴이 정의되어 있기 때문에 매핑시 빌더를 사용하였습니다. MapStruct는 빌더,생성자,getter/setter 모두 지원하므로 편하신 걸 사용하시면 됩니다.
+
+### 5-2. 컬렉션 일 시
+
+컬렉션간 매핑시에는 @Mapping 어노테이션 사용이 불가합니다. 컬렉션간 매핑시 Field명이 다르면 해당 컬렉션의 요소를 매핑하기 위한 특정 매핑을 만들어 줘야 합니다.
+
+아래 예제코드에서는 @Mapping 어노테이션을 사용해서 CarDto에 있는 identificationNumber을 vehicleIdentificationNumber에 매핑 되도록 설정하였습니다. 
+
+```java
+@Mapper
+public interface CarMapper {
+    
+    @Mapping(source = "identificationNumber", target = "vehicleIdentificationNumber")
+    List<Car> carDtoToCar(List<CarDto> carDto);
+}
+```
+
+하지만 실제 컬렉션의 요소가 매핑되는 `carDtoTocar1(CarDto carDto)`의 코드를 보면 identificationNumber가 vehicleIdentificationNumber에 매핑되는 코드가 없습니다.
+
+이러한 문제를 해결하기 위해서는 **컬렉션간 요소를 매핑하는 매핑**을 생성해 줘야 합니다.
+
+![2](./images/2.png)
+
+컬렉션 매핑에 정의되어 있던 @Mapping 어노테이션은 제거하고, 컬렉션간 요소를 매핑하는 `Car carDtoToCars(CarDto carDto);` 메서드를 추가했습니다.
+
+```java
+@Mapper
+public interface CarMapper {
+
+    CarDto carToCarDto(Car car);
+
+    @Mappings(
+            @Mapping(source = "identificationNumber", target = "vehicleIdentificationNumber")
+    )
+    Car carDtoToCars(CarDto carDto);
+    
+    List<Car> carDtoToCar(List<CarDto> carDto);
+}
+```
+
+다시 실제 컬렉션 컬렉션의 요소가 매핑되는 `carDtoToCars(CarDto carDto)`의 코드를 보면 identificationNumber가 의vehicleIdentificationNumber에 매핑되는 코드가 존재하는 것을 알 수 있습니다.
+
+![3](./images/3.png)
 
 이외에도 MapStruct는 다양한 매핑 방법과 각종 설정을 지원합니다.
 자세한 내용은 [MapStruct 1.4.1.Final Reference Guide](https://mapstruct.org/documentation/stable/reference/html) 를 참고해주세요.

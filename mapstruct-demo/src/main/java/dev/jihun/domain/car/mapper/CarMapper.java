@@ -5,7 +5,8 @@ import dev.jihun.domain.car.dto.CarDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import org.mapstruct.factory.Mappers;
+
+import java.util.List;
 
 @Mapper
 public interface CarMapper {
@@ -16,4 +17,6 @@ public interface CarMapper {
             @Mapping(source = "identificationNumber", target = "vehicleIdentificationNumber")
     )
     Car carDtoToCar(CarDto carDto);
+
+    List<Car> carDtoToCar(List<CarDto> carDto);
 }
