@@ -16,7 +16,7 @@ ZONE의 값을 **Asia/Seoul**로 변경 후 저장 합니다.
 
 ## 2. /etc/localtime 심볼릭 링크 변경
 
-기존 /etc/localtime에 연결된 심볼릭 링크를 제거 후 생성하기 위해 -`sf` 옵션을 사용하였습니다.
+기존 /etc/localtime에 연결된 심볼릭 링크를 제거 후 생성하기 위해 `-sf` 옵션을 사용하였습니다.
 
 ```bash
 sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
