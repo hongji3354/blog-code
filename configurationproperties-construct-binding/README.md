@@ -1,5 +1,7 @@
 # @ConfigurationProperties 생성자 바인딩
 
+> 코드는 [github](https://github.com/hongji3354/blog-code/tree/master/configurationproperties-construct-binding) 에 있습니다.
+
 `@ConfigurationProperties`는 기본적으로 **setter를 사용해서 바인딩을 진행**합니다.
 하지만, Spring Boot 2.2 부터는 생성자를 사용해서 바인딩할 수 있습니다.
 
